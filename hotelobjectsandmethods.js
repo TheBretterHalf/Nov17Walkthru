@@ -15,5 +15,24 @@ var hotel = {
     
     numberOfRooms: function() {
         return this.roomNumber.length + this.roomNumbersBooked.length;
+    },
+    
+    bookAroom: function(roomNumberReq) {
+        if (this.roomsavailable()>0){
+            for (let i=0; i<this.roomNumbers.length; i++){
+                if (this.roomNumbers[i]==roomNumberReq){
+                    this.roomNumbersBooked = this.roomNumbers.splice(i,1).concat(this.roomNumbersBooked);
+                    console.log(this.roomNumbersBooked);
+                    return
+                }
+                else {
+                    console.log("Not a valid Room #");
+                }
+                        
+            }
+        }
+        else{
+            console.log("No rooms Available")
+        }
     }
 }
