@@ -8,6 +8,11 @@ var hotel = {
     roomsavailable: function(roomNumbers, roomNumbersBooked){
         return this.roomNumbers.length-this.roomNumbersBooked.length;
     },
+    
+    numberOfRoomsBooked: function() {
+        return this.roomNumbersBooked.length;
+    },
+    
     numberOfRooms: function() {
         return this.roomNumber.length + this.roomNumbersBooked.length;
     }
