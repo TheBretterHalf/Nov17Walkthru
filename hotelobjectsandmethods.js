@@ -23,7 +23,7 @@ var hotel = {
                 if (this.roomNumbers[i]==roomNumberReq){
                     this.roomNumbersBooked = this.roomNumbers.splice(i,1).concat(this.roomNumbersBooked);
                     console.log(this.roomNumbersBooked);
-                    return
+                    return;
                 }
                 else {
                     console.log("Not a valid Room #");
@@ -32,7 +32,18 @@ var hotel = {
             }
         }
         else{
-            console.log("No rooms Available")
+            console.log("No rooms Available");
         }
+    },
+    bookArandomroom: function(numofrooms){
+        if (this.roomsavailable()>numofrooms){
+            var selectedroom = this.roomNumbers[Math.floor(Math.random()*this.roomNumbers.length)]
+            for (let i=0; i<this.roomNumbers.length; i++){
+                if (this.roomNumber[i]==selectedroom){
+                    this.roomNumbersBooked = this.roomNumbers.splice(i,1).concat(this.roomNumbersBooked);
+                    return;
+                }
+            }
+        } else ("No Rooms Available");
     }
-}
+};
