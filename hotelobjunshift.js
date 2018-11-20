@@ -51,7 +51,7 @@ var hotel = {
         if (this.roomsavailable()>0){
             var selectedroom = this.roomNumbers[Math.floor(Math.random()*this.roomNumbers.length)];
             this.roomNumbers.splice(this.roomNumbers.indexOf(selectedroom),1)
-            this.roomNumbersBooked.push(selectedroom);
+            this.roomNumbersBooked.unshift(selectedroom);
             console.log(this.roomNumbersBooked);
             return;
         }
