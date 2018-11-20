@@ -35,15 +35,24 @@ var hotel = {
             console.log("No rooms Available");
         }
     },
-    bookArandomroom: function(numofrooms){
-        if (this.roomsavailable()>numofrooms){
-            var selectedroom = this.roomNumbers[Math.floor(Math.random()*this.roomNumbers.length)]
+    bookArandomroom: function(){
+        if (this.roomsavailable()>0){
+            var selectedroom = this.roomNumbers[Math.floor(Math.random()*this.roomNumbers.length)];
             for (let i=0; i<this.roomNumbers.length; i++){
-                if (this.roomNumber[i]==selectedroom){
+                if (this.roomNumbers[i]==selectedroom){
                     this.roomNumbersBooked = this.roomNumbers.splice(i,1).concat(this.roomNumbersBooked);
+                    console.log(this.roomNumbersBooked);
                     return;
                 }
             }
         } else ("No Rooms Available");
+    },
+    bookArandomroomindex: function(){
+        if (this.roomsavailable()>0){
+            var selectedroom = this.roomNumbers[Math.floor(Math.random()*this.roomNumbers.length)];
+            this.roomNumbersBooked = this.roomNumbers.splice(this.roomNumbers.indexOf(selectedroom),1).concat(this.roomNumbersBooked);
+            console.log(this.roomNumbersBooked);
+            return;
+        }
     }
 };
