@@ -64,3 +64,5 @@ var hotel = {
         }
     }
 };
+//add function to check out of selected room
+//add function to check out of all rooms
