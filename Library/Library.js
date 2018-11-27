@@ -5,8 +5,8 @@ var Library = {
     booksavail: function (){
         for (let i=0; i<this.books.length; i++){
         var CaseBooks = this.books[i].charAt(0).toUpperCase()+this.books[i].slice(1);
-    }
-        return this.CaseBooks
+        console.log(CaseBooks)
+        }
     },
     checkoutbook: function(requestedbook){
         if (this.books.length<0){
@@ -14,10 +14,11 @@ var Library = {
         }
         else
             var rqbook=requestedbook.toLowerCase();
-            for (let i=0; i>this.books.length; i++){
-                if (rqbook===this.books[i]){
+            for (let i=0; i<this.books.length; i++){
+                if (rqbook==this.books[i]){
                     this.checkedout = this.checkedout.concat(this.books.splice(i,1));
-                    return rqbook;
+                    console.log(this.checkedout)
+                    return
                 }
                 else
                     console.log("We do not have that book in our Library")
@@ -28,11 +29,12 @@ var Library = {
             console.log("No Books Checked Out")
         }
         else
-            var chkbook = this.checkbook.toLowerCase();
+            var chkbook = this.checkbook
             for (let i=0; i<this.checkedout.length; i++){
-                if (this.checkbook===this.checkedout[i]){
+                if (chkbook==this.checkedout[i]){
                     this.books = this.books.concat(this.checkedout.splice(i,1));
-                    return this.books
+                    console.log(this.books)
+                    return 
                 }
                 else
                     console.log("You have not checked this book out")
