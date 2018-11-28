@@ -15,8 +15,8 @@ var hotel = {
     
     numberOfRooms: function() {
         return this.roomNumber.length + this.roomNumbersBooked.length;
-    },
-    
+        },
+
     bookAroom: function(roomNumberReq) {
         if (this.roomsavailable()>0){
             for (let i=0; i<this.roomNumbers.length; i++){
@@ -64,6 +64,3 @@ var hotel = {
         }
     }
 };
-//add function to check out of selected room
-//add function to check out of all rooms
-//create dom functionality
